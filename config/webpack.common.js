@@ -12,7 +12,7 @@ module.exports = {
   },
 
   resolve: {
-    modules: ['node_modules'],
+    modules: ['node_modules', "not_exist_path"],
     extensions: ['.js', '.ts', '.scss']
   },
 

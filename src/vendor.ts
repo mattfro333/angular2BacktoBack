@@ -4,10 +4,10 @@ import '@angular/core';
 import '@angular/common';
 import '@angular/http';
 import '@angular/router';
-
+// RxJS
 import 'rxjs';
-
-
-import 'script!jquery';
-import 'foundation-sites/dist/foundation.js';
+// Other vendors for example jQuery, Lodash or Bootstrap
+// You can import js, ts, css, sass, ...
+import 'script-loader!jquery';
+import 'foundation-sites/dist/js/foundation.js';
 import '../public/sass/styles.scss';
