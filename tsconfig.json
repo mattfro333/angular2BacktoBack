@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "es6", "core-js"],
+    "lib": ["dom", "es7", "core-js"],
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
