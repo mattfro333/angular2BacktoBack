@@ -33,6 +33,10 @@ module.exports = webpackMerge(commonConfig, {
       'process.env': {
         'ENV': JSON.stringify(ENV)
       }
-    })
+    }),
+    new webpack.ContextReplacementPlugin(
+    /angular(\|/)core(\|/)@angular/,
+    helpers.root.resolve(__dirname, './src')
+    )
   ]
 });
