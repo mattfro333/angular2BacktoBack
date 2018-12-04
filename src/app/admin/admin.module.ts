@@ -1,4 +1,4 @@
-import { NgModules } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -21,7 +21,7 @@ const AdminRoutes: Routes = [
     ]
   },
 ];
-@NgModules({
+@NgModule({
   imports: [
     CommonModule,
     FormsModule,
