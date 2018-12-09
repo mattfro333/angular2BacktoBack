@@ -39,7 +39,7 @@ export class UserService implements CanActivate {
           .catch(function(error) {
             alert(`${error.message} Please Try Again`);
           });
-
+}
         verifyUser() {
           this.authUser = firebase.auth().currentUser;
           if (this.authUser) {
@@ -67,5 +67,4 @@ export class UserService implements CanActivate {
                   alert(`${error.message} Unable to login. Try again!`)
               })
           }
-}
 }
