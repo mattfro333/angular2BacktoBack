@@ -28,8 +28,7 @@ const AdminRoutes: Routes = [
     RouterModule.forChild(AdminRoutes)
   ],
   exports: [
-    RouterModule,
-    Routes
+    RouterModule
   ],
   declarations: [
     AdminComponent,
