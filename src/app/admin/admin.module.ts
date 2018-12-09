@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { AdminComponent } from './adminComponent/admin.component';
-import { AdminMenuComponent } from '/adminMenu/admin-menu.component';
+import { AdminMenuComponent } from './adminMenu/admin-menu.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './signUp/sign-up.component';
 
@@ -28,13 +28,14 @@ const AdminRoutes: Routes = [
     RouterModule.forChild(AdminRoutes)
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    Routes
   ],
   declarations: [
     AdminComponent,
     AdminMenuComponent,
-    LoginComponent
-    SignUpcomponent
+    LoginComponent,
+    SignUpComponent
   ],
   providers: [
     UserService,

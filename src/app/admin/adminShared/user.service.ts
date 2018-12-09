@@ -60,7 +60,7 @@ export class UserService implements CanActivate {
 
           logout() {
             this.userLoggedIn = false;
-            firebase.auth().signout().then(function() {
+            firebase.auth().signOut().then(function() {
                 alert(`Logged Out!`);
 
             }, function(error) {
