@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'navi-bar';
+  selector: 'navi-bar',
   template: `
               <div class="top-bar">
                 <div class="top-bar-title"> GigaByte Gaming Company</div>
@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
                       </ul>
                     </div>
                   </div>
-                `;
+                `,
         styleUrls: ['./navbar.component.css']
 })
 export class NavComponent {}

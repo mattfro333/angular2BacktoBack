@@ -33,7 +33,7 @@ const AdminRoutes: Routes = [
   declarations: [
     AdminComponent,
     AdminMenuComponent,
-    LoginComponent,
+    LoginComponent
     SignUpcomponent
   ],
   providers: [
