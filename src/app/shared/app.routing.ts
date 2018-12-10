@@ -7,7 +7,7 @@ import { ErrorComponent } from '../error/error.component';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      {path: 'home', component: HomeComponent},
+      {path: '', component: HomeComponent},
       {path: '**', component: ErrorComponent}
     ])
   ],
