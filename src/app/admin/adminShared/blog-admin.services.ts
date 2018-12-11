@@ -12,6 +12,16 @@ export class BlogAdminService {
           let url = snapshot.metadata.downloadURLs[0];
           let dbRef = firebase.database().ref('blogPosts/');
           let newPost = dbRef.push();
+          newPost.set ({
+            title: post.title,
+            content: post.content,
+            imgTitle: post.imgTitle,
+            img: url,
+            id: newPost.key
+          });
         })
+        .catch ((error)=>{
+          alert(`failed upload: ${error}`);
+        });
   }
 }
