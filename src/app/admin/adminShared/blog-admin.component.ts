@@ -20,5 +20,27 @@ export class BlogAdminComponent implements OnInit {
       private router: Router,
       private blogAdminSVC: BlogAdminService
   ){}
-  
+
+  logout(){
+    this.userSVC.logout();
+    this.router.navigate(['']);
+  }
+
+  chooseMode(mode: string){
+    this.menuChoice = mode;
+  }
+
+  ngOnInit(){
+    this.theUser = this.userSVC.loggedInUser;
+    this.getPosts();
+  }
+
+  getPosts(){
+    let dbRef = firebase.database().ref('blogPosts/');
+    dbRef.once('value')
+      .then((snapshot)=> {
+          let tmp: string[] = snapshot.val();
+          this.blogPosts = Object.keys(tmp).map(key => tmp[key])
+      })
+  }
 }
