@@ -14,4 +14,11 @@ export class BlogAdminComponent implements OnInit {
   theUser: string;
   menuChoice: string;
   blogPosts: Blog[];
+
+  constructor(
+      private userSVC: UserService,
+      private router: Router,
+      private blogAdminSVC: BlogAdminService
+  ){}
+  
 }
