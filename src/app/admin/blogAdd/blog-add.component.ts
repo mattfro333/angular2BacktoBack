@@ -14,4 +14,6 @@ export class BlogAddComponent {
   postTitle: string;
   content: string;
   post: Blog;
+
+  constructor( private blogAdminSVC: BlogAdminService, private router: Router) {}
 }
