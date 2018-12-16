@@ -3,3 +3,25 @@
       <h1>Add a post</h1>
     </div>
 </div>
+
+<form>
+    <div class="row">
+        <div class="small-12 medium-6 columns">
+            <label>Post Title
+              <input type="text" [(ngModel)]="postTitle" name="postTitle" required #psTitle="ngModel">
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-6 columns">
+            <label>Post Content
+              <textarea rows="15" [(ngModel)]="content" name="postTitle" required #psContent="ngModel">
+              </textarea>
+            </label>
+        </div>
+        <div class="small-12 medium-6 columns">
+            <input type="file" (change)="fileLoad($event)"><br>
+            <img *ngIf = "imageSRC" [src] = "imageSRC" alt="Image preview...">
+     </div>
+  </div>
+</form>
