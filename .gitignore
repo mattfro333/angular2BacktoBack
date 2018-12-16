@@ -1,2 +1,2 @@
 node_modules
-user.service.ts
+src/app/admin/adminShared/config.json

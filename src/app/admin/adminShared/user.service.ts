@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot
 } from '@angular/router';
 import * as firebase from 'firebase';
-
+const config = require("./config.json");
 @Injectable()
 export class UserService implements CanActivate {
     userLoggedIn: boolean = false;
@@ -15,12 +15,12 @@ export class UserService implements CanActivate {
 
     constructor( private router: Router ) {
         firebase.initializeApp({
-          apiKey: "AIzaSyDpWo-AOak8pjVAoy09KKU6KryX9bsk1EA",
-          authDomain: "gigabytegames-30a46.firebaseapp.com",
-          databaseURL: "https://gigabytegames-30a46.firebaseio.com",
-          projectId: "gigabytegames-30a46",
-          storageBucket: "gigabytegames-30a46.appspot.com",
-          messagingSenderId: "680203144624"
+          apiKey: config.apiKey,
+          authDomain: config.authDomain,
+          databaseURL: config.databaseURL,
+          projectId: config.projectId,
+          storageBucket: config.storageBucket,
+          messagingSenderId: config.messagingSenderId
         })
     }
 
