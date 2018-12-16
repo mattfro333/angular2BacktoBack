@@ -15,10 +15,12 @@ export class UserService implements CanActivate {
 
     constructor( private router: Router ) {
         firebase.initializeApp({
-          apiKey: "AIzaSyDykS_g8v-MFXAxUbi7DpH1lY_U3tXEUTk",
-          authDomain: "gigabytegames-bb2f7.firebaseapp.com",
-          databaseURL: "https://gigabytesgames-bb2f7.firebaseapp.com",
-          messagingSenderId: "434649479866"
+          apiKey: "AIzaSyDpWo-AOak8pjVAoy09KKU6KryX9bsk1EA",
+          authDomain: "gigabytegames-30a46.firebaseapp.com",
+          databaseURL: "https://gigabytegames-30a46.firebaseio.com",
+          projectId: "gigabytegames-30a46",
+          storageBucket: "gigabytegames-30a46.appspot.com",
+          messagingSenderId: "680203144624"
         })
     }
 
