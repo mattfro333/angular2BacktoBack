@@ -24,4 +24,13 @@
             <img *ngIf = "imageSRC" [src] = "imageSRC" alt="Image preview...">
      </div>
   </div>
+      <div class="row align-center">
+          <div class="small-12 columns">
+              <div class="expanded button-group">
+              <button class="success button " type="button" [disabled]="!psTitle || !psContent.valid"
+                    | (click)="createPost()">Create Post</button>
+                  <button class="cancel button" type="button" (click)="cancel()">Cancel</button>
+          </div>
+      </div>
+    </div>
 </form>
