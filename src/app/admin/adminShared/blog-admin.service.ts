@@ -24,4 +24,9 @@ export class BlogAdminService {
           alert(`failed upload: ${error}`);
         });
   }
+
+  editPost(update: Blog){
+    let dbRef = firebase.database().ref('blogPosts/').child(update.id)
+  }
+
 }
