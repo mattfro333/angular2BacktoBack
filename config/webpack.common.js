@@ -12,8 +12,8 @@ module.exports = {
   },
 
   resolve: {
-    modules: ['node_modules', "not_exist_path"],
-    extensions: ['.js', '.ts', '.scss']
+    modules: ['node_modules', 'not_exist_path'],
+    extensions: ['.js', '.ts', '.scss', '.css', '.json', '.html']
   },
 
   module: {
