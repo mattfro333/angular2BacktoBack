@@ -24,6 +24,7 @@
     "firebase": "^4.2.0",
     "foundation-sites": "^6.4.2",
     "fstream": "^1.0.12",
+    "http-proxy-agent": "^2.1.0",
     "https-proxy-agent": "^2.2.1",
     "jquery": "^3.4.0",
     "js-yaml": "^3.13.1",
