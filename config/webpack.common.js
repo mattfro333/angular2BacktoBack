@@ -23,9 +23,15 @@ module.exports = {
         loaders: ['awesome-typescript-loader', 'angular2-template-loader']
       },
       {
-        test: /\.html$/,
-        loader: 'html-loader'
-      },
+       test: /\.html$/,
+       exclude: [/node_modules/, helpers.root('./index.html')],
+       use: {
+           loader: 'file-loader',
+           query: {
+               name: '[name].[ext]'
+           },
+       },
+   },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file-loader?name=assets/[name].[hash].[ext]'
@@ -48,12 +54,15 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
-    }),
-
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: './src/index.html',
+      name: ['app', 'vendor', 'polyfills']
     })
-    ]
+    ],
+optimization: {
+    splitChunks: {
+        chunks: 'all'
+    }
+},
+
 };

@@ -15,19 +15,12 @@ module.exports = webpackMerge(commonConfig, {
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js'
   },
-
-  htmlLoader: {
-    minimize: false // workaround for ng2
+  optimization: {
+    nodeEnv: 'production',
+    minimize: true //Update this to true or false
   },
-
   plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
-      mangle: {
-        keep_fnames: true
-      }
-    }),
+    new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin('[name].[hash].css'),
     new webpack.DefinePlugin({
       'process.env': {
@@ -35,8 +28,8 @@ module.exports = webpackMerge(commonConfig, {
       }
     }),
     new webpack.ContextReplacementPlugin(
-    /angular(\|/)core(\|/)@angular/,
-    helpers.root.resolve(__dirname, './src')
+    /\@angular(\\|\/)core(\\|\/)es7/,
+    helpers.root(__dirname, './src')
     )
   ]
 });

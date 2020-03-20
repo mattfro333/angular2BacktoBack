@@ -9,16 +9,21 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.ts$/,
         loaders: ['awesome-typescript-loader', 'angular2-template-loader']
       },
-      {
-        test: /\.html$/,
-        loader: 'html'
-
+   {
+      test: /\.html$/,
+      exclude: [/node_modules/, helpers.root('./index.html')],
+      use: {
+          loader: 'file-loader',
+          query: {
+              name: '[name].[ext]'
+          },
       },
+  },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'null'
