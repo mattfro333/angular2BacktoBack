@@ -25,12 +25,8 @@ module.exports = {
       {
        test: /\.html$/,
        exclude: [/node_modules/, helpers.root('./index.html')],
-       use: {
-           loader: 'file-loader',
-           query: {
-               name: '[name].[ext]'
-           },
-       },
+       use: "html-loader"
+
    },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -42,7 +38,7 @@ module.exports = {
         //loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
         use: ExtractTextPlugin.extract({
          fallback: "style-loader",
-         use: "css-loader!sass-loader",
+         use: "css-loader!sass-loader"
        })
       },
       {
@@ -55,14 +51,14 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/index.ejs',
+ minify: {
+     removeComments: true,
+     collapseWhitespace: true,
+     removeAttributeQuotes: true
+ },
       name: ['app', 'vendor', 'polyfills']
     })
     ],
-optimization: {
-    splitChunks: {
-        chunks: 'all'
-    }
-},
 
 };
